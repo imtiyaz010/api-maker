@@ -6,7 +6,7 @@ module.exports.createApiMaker = async (req, res) => {
     let db = await dbConnect(collection);
     const data = await db.insertOne(req.body);
     const id = data.insertedId.toString();
-    const url = `http://localhost:8080/api/apimaker/${id}`
+    const url = `https://apis-maker.herokuapp.com/api/apimaker/${id}`
     res.send({ url });
 }
 
@@ -25,6 +25,6 @@ module.exports.updateApiMaker = async (req, res) => {
     const data = await db.updateOne({ _id: ObjectId(id) }, {
         $set: req.body
     });
-    const url = `http://localhost:8080/api/apimaker/${id}`
+    const url = `https://apis-maker.herokuapp.com/api/apimaker/${id}`
     res.send({ url });
 }
