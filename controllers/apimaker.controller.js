@@ -22,7 +22,7 @@ module.exports.updateApiMaker = async (req, res) => {
     const { id } = req.params;
     const collection = 'apis';
     let db = await dbConnect(collection);
-    const data = await db.updateOne({ _id: ObjectId(id) }, {
+    await db.updateOne({ _id: ObjectId(id) }, {
         $set: req.body
     });
     const url = `https://apis-maker.herokuapp.com/api/apimaker/${id}`
