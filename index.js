@@ -8,6 +8,6 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use('/api', indRouter);
+app.use('/', indRouter);
 
 app.listen(port, () => console.log(`server is running on port ${port}`));
