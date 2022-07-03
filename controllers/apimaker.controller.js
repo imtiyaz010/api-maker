@@ -2,9 +2,11 @@ const dbConnect = require('../mongo/mongodb');
 const { ObjectId } = require('mongodb');
 
 module.exports.displayApiMaker = async (req, res) => {
+    console.log('get list data');
     const collection = 'apis';
     let db = await dbConnect(collection);
     const data = await db.find().toArray();
+    console.log('data', data);
     res.send(data);
 }
 
