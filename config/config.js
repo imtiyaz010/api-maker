@@ -4,7 +4,7 @@
 }*/
 
 const config = {
-    MONGODB_URL: `mongodb+srv://imtiyazj:NuctwvdWCGRWkwuQ@cluster0.vl7oh.mongodb.net/?retryWrites=true&w=majority`,
+    MONGODB_URL: process.env.MONGODB_URI,
     DATABASE_NAME: 'apimaker'
 }
 
